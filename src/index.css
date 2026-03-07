@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: #0a0a0a;
+    color: #ffffff;
+    font-family: 'Inter', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #0a0a0a;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #39FF14;
+    border-radius: 3px;
+  }
+
+  ::selection {
+    background: #39FF14;
+    color: #0a0a0a;
+  }
+}
+
+@layer components {
+  .neon-text {
+    color: #39FF14;
+    text-shadow: 0 0 10px rgba(57, 255, 20, 0.5);
+  }
+
+  .neon-border {
+    border-color: #39FF14;
+    box-shadow: 0 0 10px rgba(57, 255, 20, 0.3);
+  }
+
+  .btn-primary {
+    @apply bg-neon text-dark font-bold px-8 py-4 rounded-full text-base tracking-wide
+           transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(57,255,20,0.6)]
+           active:scale-95 inline-flex items-center gap-2;
+  }
+
+  .btn-secondary {
+    @apply border-2 border-white text-white font-semibold px-8 py-4 rounded-full text-base tracking-wide
+           transition-all duration-300 hover:bg-white hover:text-dark hover:scale-105
+           active:scale-95 inline-flex items-center gap-2;
+  }
+
+  .section-tag {
+    @apply text-neon text-xs font-bold tracking-[0.3em] uppercase mb-4 inline-block;
+  }
+
+  .card-hover {
+    @apply transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_8px_40px_rgba(57,255,20,0.15)];
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-neon to-green-400 bg-clip-text text-transparent;
+  }
+}
+
+@layer utilities {
+  .animate-delay-100 { animation-delay: 0.1s; }
+  .animate-delay-200 { animation-delay: 0.2s; }
+  .animate-delay-300 { animation-delay: 0.3s; }
+  .animate-delay-400 { animation-delay: 0.4s; }
+  .animate-delay-500 { animation-delay: 0.5s; }
+
+  .text-shadow-neon {
+    text-shadow: 0 0 20px rgba(57, 255, 20, 0.4), 0 0 40px rgba(57, 255, 20, 0.2);
+  }
+}
